@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { selectCoin } from "../redux/reducers/coinsReducer";
 
 const Coin = props => {
   return (
@@ -15,8 +16,7 @@ const Coin = props => {
 };
 
 const mapStateToProps = (state, props) => {
-  console.log(props.match.params);
-  return { coin: state.entities.coins.byId[props.match.params.name] };
+  return { coin: selectCoin(state, props.match.params["name"]) };
 };
 
 export default connect(mapStateToProps)(Coin);

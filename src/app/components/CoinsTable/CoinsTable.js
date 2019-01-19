@@ -6,6 +6,9 @@ import TableRowLink from "../TableRowLink/TableRowLink";
 
 class CoinsTable extends Component {
   render() {
+    const {
+      coins: { allIds, byId }
+    } = this.props;
     return (
       <div>
         <table>
@@ -20,8 +23,8 @@ class CoinsTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.coins.allIds.map(name => {
-              return <TableRowLink key={name} coin={this.props.coins.byId[name]} name={name} />;
+            {allIds.map(name => {
+              return <TableRowLink key={name} coin={byId[name]} name={name} />;
             })}
           </tbody>
         </table>
@@ -34,4 +37,5 @@ const mapStateToProps = state => {
   return { coins: state.entities.coins };
 };
 
+// export default connect(mapStateToProps)(CoinsTable);
 export default connect(mapStateToProps)(CoinsTable);

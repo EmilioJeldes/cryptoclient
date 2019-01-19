@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+
 import styles from "./TableRowLink.module.scss";
 import * as PropTypes from "prop-types";
 
 const TableRowLink = class TableRowLink extends Component {
   handleClick = () => {
-    window.location = "/coins/" + this.props.name;
+    this.props.history.push("/coins/" + this.props.coin.name);
   };
 
   render() {
@@ -28,4 +30,4 @@ TableRowLink.propTypes = {
   name: PropTypes.any
 };
 
-export default TableRowLink;
+export default withRouter(TableRowLink);

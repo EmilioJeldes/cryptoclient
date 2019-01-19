@@ -28,12 +28,17 @@ export const saveState = state => {
 
 const persistedState = loadState();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducers, persistedState, composeEnhancers(applyMiddleware(reduxPromise, thunk)));
+const store = createStore(reducers, composeEnhancers(applyMiddleware(reduxPromise, thunk)));
 
+/**
+ * Save pieces of state in local storage
+ */
+/*
 store.subscribe(() => {
   saveState({
     entities: store.getState().entities
   });
 });
+*/
 
 export default store;
