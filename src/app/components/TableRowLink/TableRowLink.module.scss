@@ -1,0 +1,13 @@
+.tableRow {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: whitesmoke;
+  }
+}
+
+.link {
+  display: block;
+}
