@@ -1,19 +1,27 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import React, { Component, Fragment } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
-import Home from "./pages/Home";
 import Coin from "./pages/Coin";
+import routes from "./routes";
+import NavigationBar from "./components/Navbar/NavigationBar";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Router>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/coins/:name" component={Coin} />
-          </Switch>
+          <Fragment>
+            <NavigationBar />
+            <Switch>
+              <Route exact path={routes.home.route} component={routes.home.component} />
+              <Route exact path="/coins/:name" component={Coin} />
+              <Route exact path={routes.about.route} component={routes.about.component} />
+              <Route exact path={routes.statistics.route} component={routes.statistics.component} />
+              <Route exact path={routes.global.route} component={routes.global.component} />
+            </Switch>
+          </Fragment>
         </Router>
       </div>
     );

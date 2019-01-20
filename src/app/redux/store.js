@@ -17,16 +17,16 @@ export const loadState = () => {
   }
 };
 
-export const saveState = state => {
-  try {
-    const serializedState = JSON.stringify(state);
-    localStorage.setItem("state", serializedState);
-  } catch (e) {
-    console.log("The store cant be parsed from localstorage");
-  }
-};
+// export const saveState = state => {
+//   try {
+//     const serializedState = JSON.stringify(state);
+//     localStorage.setItem("state", serializedState);
+//   } catch (e) {
+//     console.log("The store cant be parsed from localstorage");
+//   }
+// };
 
-const persistedState = loadState();
+// const persistedState = loadState();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware(reduxPromise, thunk)));
 

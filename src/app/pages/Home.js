@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { fetchAllCoins } from "../redux/actions/coinActions";
-import Navbar from "../components/Navbar/Navbar";
 import CoinsTable from "../components/CoinsTable/CoinsTable";
 
 class Home extends Component {
@@ -13,7 +12,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <CoinsTable match={this.props.match} />
       </div>
     );
