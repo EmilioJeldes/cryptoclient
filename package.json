@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://emiliojeldes.github.io/cryptoclient",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
@@ -25,8 +24,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,8 +36,5 @@
   ],
   "prettier": {
     "printWidth": 120
-  },
-  "devDependencies": {
-    "gh-pages": "^2.0.1"
   }
 }
