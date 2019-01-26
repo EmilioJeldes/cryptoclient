@@ -36,31 +36,31 @@ export const allIds = (state = [], action) => {
   }
 };
 
-// export const loading = (state = { isLoading: false, loaded: false }, action) => {
-//   switch (action.type) {
-//     case FETCH_USER_LIST_START:
-//       if (state.loaded) {
-//         return {
-//           ...state,
-//           isLoading: false
-//         };
-//       }
-//       return {
-//         ...state,
-//         isLoading: true,
-//         loaded: false
-//       };
-//
-//     case FETCH_USER_LIST_SUCCESS || FETCH_USER_LIST_FAILURE:
-//       return {
-//         ...state,
-//         isLoading: false,
-//         loaded: true
-//       };
-//
-//     default:
-//       return state;
-//   }
-// };
+export const loading = (state = { isLoading: false, loaded: false }, action) => {
+  switch (action.type) {
+    case COINS_FETCH_ALL_START:
+      if (state.loaded) {
+        return state;
+      }
+      return {
+        ...state,
+        isLoading: true,
+        loaded: false
+      };
+    case COINS_FETCH_ALL_FAILURE:
+    case COINS_FETCH_ALL_SUCCESS:
+      if (state.loaded) {
+        return state;
+      }
+      return {
+        ...state,
+        isLoading: false,
+        loaded: true
+      };
 
-export default combineReducers({ byId, allIds });
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({ byId, allIds, loading });
