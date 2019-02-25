@@ -20,12 +20,12 @@ class CoinsTable extends Component {
           <Table>
             <thead>
               <tr>
+                <th>#</th>
                 <th>Name</th>
-                <th>icon</th>
                 <th>Score</th>
                 <th>Price</th>
-                <th>Ranking</th>
                 <th>Profit</th>
+                <th>Charts</th>
               </tr>
             </thead>
             <tbody>

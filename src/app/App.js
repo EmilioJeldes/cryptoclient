@@ -6,12 +6,13 @@ import "./App.css";
 import Coin from "./pages/Coin";
 import routes from "./routes";
 import NavigationBar from "./components/Navbar/NavigationBar";
+import { devProfileBase } from "../helpers/globals";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
+        <Router basename={devProfileBase}>
           <Fragment>
             <NavigationBar />
             <Switch>

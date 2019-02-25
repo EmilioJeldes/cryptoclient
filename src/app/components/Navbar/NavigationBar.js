@@ -38,7 +38,6 @@ class NavigationBar extends Component {
               <NavbarSearchBar placeholder="Search ..." />
               <NavbarLink to={home.route} content={home.content} />
               <NavbarLink to={about.route} content={about.content} />
-              <NavbarLink to={statistics.route} content={statistics.content} />
               <NavbarLink to={global.route} content={global.content} />
             </Nav>
           </Collapse>

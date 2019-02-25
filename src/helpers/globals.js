@@ -1,1 +1,9 @@
-export const API_URL = "http://159.65.201.23:8080";
+// Can be changed to local host for deployment
+export const API_URL = "https://ejeldes.cl";
+
+// Set this to an empty string for deployment
+export const devProfile = "https://ejeldes.cl";
+
+// Set this to the root directory (not the entire domain, just the base directory)
+// ex: /app
+export const devProfileBase = "";

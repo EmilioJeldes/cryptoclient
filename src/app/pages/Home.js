@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { fetchAllCoins } from "../redux/actions/coinActions";
+import { fetchCoinsByPage, fetchCoinsTotalCount } from "../redux/actions/coinActions";
 import CoinsTable from "../components/CoinsTable/CoinsTable";
 
 class Home extends Component {
-  componentWillMount() {
-    this.props.fetchAllCoins();
+  componentDidMount() {
+    const {
+      pager: { selectedPage, size },
+      fetchCoinsByPage,
+      fetchCoinsTotalCount
+    } = this.props;
+
+    fetchCoinsTotalCount().then(() => fetchCoinsByPage(selectedPage, size));
   }
 
   render() {
@@ -18,7 +24,11 @@ class Home extends Component {
   }
 }
 
+const mapStateToProps = ({ pager }) => {
+  return { pager };
+};
+
 export default connect(
-  null,
-  { fetchAllCoins }
+  mapStateToProps,
+  { fetchCoinsByPage, fetchCoinsTotalCount }
 )(Home);
